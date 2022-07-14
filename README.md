@@ -1,1 +1,1 @@
-
+# stock_market_trend_detector
