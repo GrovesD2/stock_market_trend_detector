@@ -1,5 +1,5 @@
 data/nn_inputs/input_data.csv
-data/nn_inputs/x_test.csv
-data/nn_inputs/x_train.csv
-data/nn_inputs/y_test.csv
-data/nn_inputs/y_train.csv
+data/nn_inputs/x_test.npy
+data/nn_inputs/x_train.npy
+data/nn_inputs/y_test.npy
+data/nn_inputs/y_train.npy
