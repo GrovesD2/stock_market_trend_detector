@@ -8,7 +8,7 @@ pio.renderers.default='browser'
 import plotly.graph_objects as go
 
 CONFIG = {
-    'ticker': 'BTC-USD',
+    'ticker': 'MSFT',
     'days back': 30, # This should match what the NN was trained on
     'model': 'nn_models/trend_detector'
 }
