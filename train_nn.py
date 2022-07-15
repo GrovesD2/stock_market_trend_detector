@@ -44,7 +44,7 @@ if __name__ == '__main__':
             epochs = CONFIG['epochs'],
             batch_size = CONFIG['batch'],
             validation_split = CONFIG['validation'],
-            #callbacks = [nn_training.model_callback_save(CONFIG['model name'])]
+            callbacks = [nn_training.model_callback_save(CONFIG['model name'])]
         )
         
         # Evaluate the training
