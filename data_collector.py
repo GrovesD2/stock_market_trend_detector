@@ -28,12 +28,7 @@ if 'unclassified' in df['classification'].unique():
     df_chart['Date'] = pd.to_datetime(df_chart['Date']).dt.date
     
     # Get the other sidebar inputs 
-    first_date = st.sidebar.date_input(
-        'First date in the trend',
-        value = df_chart['Date'].min(),
-        min_value = df_chart['Date'].min(),
-        max_value = df_chart['Date'].max(),
-    )
+    first_date = df_chart['Date'].min()
     
     last_date = st.sidebar.date_input(
         'Last date in the trend',

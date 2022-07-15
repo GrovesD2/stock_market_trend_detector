@@ -10,6 +10,7 @@ DATA_LOC = 'data/classified/'
 SAVE_DIR = 'data/nn_inputs/'
 RETURN_COLS = ['Open', 'Low', 'High', 'Close', 'Volume']
 DROP_COLS = ['Adj Close', 'Date']
+MOVING_AVERAGES = [10, 20, 50]
 TREND_REPLACEMENT = {
     'no trend': 0,
     'uptrend': 1,
@@ -150,7 +151,7 @@ def get_ticker_features(df: pd.DataFrame,
     '''
 
     df = get_lagged_returns(df, RETURN_COLS, lags)
-    df = get_ma_features(df, [10, 20, 50], lags)
+    df = get_ma_features(df, MOVING_AVERAGES, lags)
     df = candle_thickness(df, lags)
     
     # This makes sure no ill processed data slips through
