@@ -1,6 +1,6 @@
 from utils import tickers
 
-TICKERS = ['BTC-USD']
+TICKERS = ['BTC-USD', 'MSFT']
 
 if __name__ == '__main__':
 

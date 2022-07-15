@@ -203,6 +203,23 @@ def get_nn_data(lags: range) -> pd.DataFrame:
     return pd.concat(dfs)
 
 
+def process_for_classifier(config: dict):
+    
+    lags = range(0, config['days back'] + 1)
+    
+    df = pd.read_csv(DATA_LOC + config['ticker'] + '.csv')
+    data = (
+        get_ticker_features(df, lags)
+        .drop(columns=RETURN_COLS+DROP_COLS)
+        .replace(TREND_REPLACEMENT)
+    )
+    
+    return (
+        df.iloc[data.index].reset_index(drop = True), 
+        reshape_rnn(data.values[:, 1:], max(lags))
+    )
+    
+
 def main(config: dict):
     
     t0 = time.time()
