@@ -30,6 +30,7 @@ def move_data_to_classified(tickers: list):
         # This logic appends the newly downloaded data to the data in the 
         # classified folder, if the file exists
         if os.path.isfile(f'data/classified/{ticker}.csv'):
+            
             df_master = pd.read_csv(f'data/master/{ticker}.csv')
             df_master['classification'] = 'unclassified'
             
@@ -37,7 +38,7 @@ def move_data_to_classified(tickers: list):
             
             df = pd.concat([
                 df_classified,
-                df_master[df_master['Date'] > df_master['Date'].max()]
+                df_master[df_master['Date'] > df_classified['Date'].max()]
             ])
             
         else:
